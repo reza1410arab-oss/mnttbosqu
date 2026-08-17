@@ -1,0 +1,322 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% -10%, #252525 0%, #0d0d0d 42%, #050505 100%);
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    text-align: center;
+    padding: 22px 10px 17px;
+}
+
+.header h1 {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #f7f7f7;
+}
+
+.header p {
+    margin-top: 5px;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #777;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+main {
+    width: 100%;
+    max-width: 780px;
+    margin: auto;
+    padding: 5px 9px 35px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px 9px;
+}
+
+/* =========================
+   CARD PREMIUM
+========================= */
+
+.game-card {
+    min-width: 0;
+    padding: 7px;
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(45,45,45,.95),
+            rgba(17,17,17,.98)
+        );
+
+    border: 1px solid rgba(255,255,255,.09);
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.5),
+        inset 0 1px 0 rgba(255,255,255,.07);
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(255,255,255,.16);
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,.6),
+        0 0 18px rgba(255,255,255,.025),
+        inset 0 1px 0 rgba(255,255,255,.09);
+}
+
+/* =========================
+   GAMBAR
+========================= */
+
+.game-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: #0b0b0b;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform .35s ease;
+}
+
+.game-card:hover .game-image img {
+    transform: scale(1.025);
+}
+
+/* =========================
+   BUTTON AREA
+========================= */
+
+.game-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 6px;
+
+    margin-top: 7px;
+}
+
+/* =========================
+   BUTTON UMUM
+========================= */
+
+.game-actions button {
+    height: 30px;
+    width: 100%;
+
+    border: 1px solid rgba(255,255,255,.08);
+    outline: none;
+
+    border-radius: 9px;
+
+    font-size: 7.5px;
+    font-weight: 800;
+    letter-spacing: .2px;
+
+    cursor: pointer;
+
+    transition:
+        transform .15s ease,
+        background .15s ease,
+        box-shadow .15s ease,
+        border-color .15s ease;
+}
+
+/* =========================
+   SARAN & POLA
+========================= */
+
+.btn-saran {
+    color: #5cffae;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(29,62,47,.95),
+            rgba(18,40,31,.95)
+        );
+
+    border-color: rgba(72,255,157,.15) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.05),
+        0 3px 8px rgba(0,0,0,.25);
+}
+
+.btn-saran:hover {
+    color: #8affc5;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(36,82,61,1),
+            rgba(20,51,37,1)
+        );
+
+    border-color: rgba(72,255,157,.3) !important;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.35),
+        0 0 10px rgba(55,255,145,.06);
+}
+
+/* =========================
+   COPY GAME
+========================= */
+
+.btn-copy {
+    color: #e7e7e7;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(47,47,47,.95),
+            rgba(25,25,25,.98)
+        );
+
+    border-color: rgba(255,255,255,.09) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.06),
+        0 3px 8px rgba(0,0,0,.3);
+}
+
+.btn-copy:hover {
+    color: #fff;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(60,60,60,1),
+            rgba(31,31,31,1)
+        );
+
+    border-color: rgba(255,255,255,.18) !important;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.4);
+}
+
+/* =========================
+   CLICK EFFECT
+========================= */
+
+.game-actions button:active {
+    transform: scale(.94);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .header {
+        padding: 18px 8px 14px;
+    }
+
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .header p {
+        font-size: 7px;
+        letter-spacing: 2.5px;
+    }
+
+    main {
+        padding: 4px 6px 25px;
+    }
+
+    .game-grid {
+        gap: 10px 6px;
+    }
+
+    .game-card {
+        padding: 6px;
+        border-radius: 14px;
+    }
+
+    .game-image {
+        aspect-ratio: 4 / 3;
+        border-radius: 10px;
+    }
+
+    .game-actions {
+        gap: 4px;
+        margin-top: 6px;
+    }
+
+    .game-actions button {
+        height: 27px;
+        border-radius: 8px;
+        font-size: 6.7px;
+    }
+}
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 360px) {
+
+    .game-grid {
+        gap: 9px 5px;
+    }
+
+    .game-card {
+        padding: 5px;
+    }
+
+    .game-actions button {
+        height: 25px;
+        font-size: 6.2px;
+    }
+}
